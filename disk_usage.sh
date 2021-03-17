@@ -7,9 +7,6 @@ then
 	dir=$1
 fi
 
-du -sh $dir
-
-
 ls -AkhlR $dir | awk -v file_name="$dir" '{
 	if ($2 ~ /K$/) total += $2;
 	if ($2 ~ /M$/) total += $2 * 1024;
